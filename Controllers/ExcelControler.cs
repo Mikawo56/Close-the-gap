@@ -83,8 +83,8 @@ namespace Close_the_gap.Controllers
             {
                 ;
             }
-            
 
+            await _cosmosDbService.AddBulkMaterialListAsync(materialList);
             return Ok(materialList);
         }
 

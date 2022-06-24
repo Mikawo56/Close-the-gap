@@ -9,6 +9,7 @@ namespace Close_the_gap.Services
         Task<List<Material>> GetMaterialListAsync(string query);
         Task<Material> GetMaterialAsync(string id);
         Task AddMaterialAsync(Material item);
+        Task AddBulkMaterialListAsync(List<Material> materials);
         Task UpdateMaterialAsync(string id, Material item);
         Task DeleteMaterialAsync(string id);
     }
