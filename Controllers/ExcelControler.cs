@@ -29,7 +29,7 @@ namespace Close_the_gap.Controllers
             }
             else
             {
-                return value.ToString();
+                return value.ToString().Trim().ToLower();
             }
         }
 
@@ -88,6 +88,62 @@ namespace Close_the_gap.Controllers
                             };
                             materialList.Add(material);
                             iRow++;
+                            material.Defects = new List<string>();
+                            if(GetStringValue(reader, CTGCircularColumn.CustomDefects) != "")
+                            {
+                                var defects = GetStringValue(reader, CTGCircularColumn.CustomDefects).Split("/");
+                                foreach (var item in defects)
+                                {
+                                    material.Defects.Add(item);
+                                }
+                            }
+
+                            if(GetStringValue(reader, CTGCircularColumn.Type) == "pc" || GetStringValue(reader, CTGCircularColumn.Type) == "tablet" || GetStringValue(reader, CTGCircularColumn.Type) == "notebook" || GetStringValue(reader, CTGCircularColumn.Type) == "mobile phone")
+                            {
+                                material.Components = new Dictionary<string, string>();
+                                var components = GetStringValue(reader, CTGCircularColumn.CustomSpecifications).Split(",");
+                                foreach (var item in components)
+                                {
+                                    if (item.Contains("GB"))
+                                    {
+                                        material.Components.Add("memory", item);
+                                    }
+                                    if (item.Contains("GHZ"))
+                                    {
+                                        var value = "";
+                                        if (material.Components.TryGetValue("cpu", out value))
+                                        {
+                                            material.Components["cpu"] = value + " " + item;
+                                        }
+                                        else
+                                        {
+                                            material.Components.Add("cpu", item);
+                                        }
+                                    }
+                                    
+                                    if (item.Contains("core"))
+                                    {
+                                        var value = "";
+                                        if (material.Components.TryGetValue("cpu", out value))
+                                        {
+                                            material.Components["cpu"] = item + " " + value;
+                                        }
+                                        else
+                                        {
+                                            material.Components.Add("cpu", item);
+                                        }
+                                    }
+                                    if (item.Contains("MB"))
+                                    {
+                                        material.Components.Add("ram", item);
+                                    }
+
+                                }
+                            }
+                            material.ReconditionnerData = new Dictionary<string, string>();
+                            material.ReconditionnerData.Add("load number", GetStringValue(reader, CTGCircularColumn.ReconditionnerLoadNumber));
+                            material.ReconditionnerData.Add("tracking reference", GetStringValue(reader, CTGCircularColumn.ReconditionnerTrackingReference));
+
                         };
                         // The result of each spreadsheet is in result.Tables
                     }
