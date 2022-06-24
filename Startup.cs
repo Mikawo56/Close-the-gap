@@ -49,6 +49,7 @@ namespace Close_the_gap
             {
                 configuration.RootPath = "ClientApp/build";
             });
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +78,8 @@ namespace Close_the_gap
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseSpa(spa =>
             {
@@ -87,6 +90,7 @@ namespace Close_the_gap
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+            
         }
     }
 }
