@@ -26,4 +26,5 @@ export default function configureStore(history: History, initialState?: Applicat
         initialState,
         compose(applyMiddleware(...middleware), ...enhancers)
     );
+    
 }
