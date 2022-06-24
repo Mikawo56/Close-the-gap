@@ -23,25 +23,32 @@ namespace Close_the_gap.Controllers
         [ActionName("Import")]
         public async Task<ActionResult> ImportAsync(Microsoft.AspNetCore.Http.IFormFile file)
         {
-            using (var ms = new MemoryStream())
+            try
             {
-                file.CopyTo(ms);
-                using (var reader = ExcelReaderFactory.CreateReader(ms))
+                using (var ms = new MemoryStream())
                 {
-                    do
+                    file.CopyTo(ms);
+                    using (var reader = ExcelReaderFactory.CreateReader(ms))
                     {
-                        while (reader.Read())
+                        do
                         {
-                            // reader.GetDouble(0);
-                        }
-                    } while (reader.NextResult());
+                            while (reader.Read())
+                            {
+                                // reader.GetDouble(0);
+                            }
+                        } while (reader.NextResult());
 
-                    // 2. Use the AsDataSet extension method
-                    var result = reader.AsDataSet();
+                        // 2. Use the AsDataSet extension method
+                        var result = reader.AsDataSet();
 
-                    // The result of each spreadsheet is in result.Tables
+                        // The result of each spreadsheet is in result.Tables
+                    }
                 }
+            }catch(Exception e)
+            {
+                ;
             }
+            
 
             return Ok();
         }
