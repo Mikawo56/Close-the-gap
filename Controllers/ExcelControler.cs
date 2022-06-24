@@ -56,11 +56,21 @@ namespace Close_the_gap.Controllers
                         // 2. Use the AsDataSet extension method
                         var result = reader.AsDataSet();
                         var iRow = 0;
-                      
+                        var donnor = "";
+                        var date = new DateTime();
                         while (reader.Read())
                         {
-                            if(iRow == 0 || iRow == 1 || iRow == 2)
+                            if(iRow == 0)
                             {
+                                donnor = reader.GetValue(5).ToString();
+                            }
+                            if(iRow == 1)
+                            {
+                                date = reader.GetDateTime(4);
+                            }
+                            if (iRow == 0 || iRow == 1 || iRow == 2)
+                            {
+                                
                                 iRow++;
                                 continue;
                             }
@@ -72,6 +82,9 @@ namespace Close_the_gap.Controllers
                                 Model = GetStringValue(reader, CTGCircularColumn.Model),
                                 Type = GetStringValue(reader, CTGCircularColumn.Type),
                                 SerialNumber = GetStringValue(reader, CTGCircularColumn.SerialNumber),
+                                Grade = GetStringValue(reader, CTGCircularColumn.CustomGrade),
+                                Donnor = donnor,
+                                CollectionDate = date,
                             };
                             materialList.Add(material);
                             iRow++;
