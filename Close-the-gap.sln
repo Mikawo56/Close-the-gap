@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Close-the-gap", "Close-the-gap.csproj", "{C3AB8917-40E8-4CE1-8832-284366794CD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3AB8917-40E8-4CE1-8832-284366794CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3AB8917-40E8-4CE1-8832-284366794CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3AB8917-40E8-4CE1-8832-284366794CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3AB8917-40E8-4CE1-8832-284366794CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {514C30AB-40F2-4024-8130-7A7F2D89A93C}
+	EndGlobalSection
+EndGlobal
