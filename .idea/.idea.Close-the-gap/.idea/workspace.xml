@@ -8,8 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e321a29-6f94-40d7-9ed8-b8f40085db32" name="Changes" comment="WIP">
+    <list default="true" id="2e321a29-6f94-40d7-9ed8-b8f40085db32" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Controllers/MaterialController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Close-the-gap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Close-the-gap/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ExcelControler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ExcelControler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Material.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Material.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/CosmosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/CosmosService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ICosmosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ICosmosService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

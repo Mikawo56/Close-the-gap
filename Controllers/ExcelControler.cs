@@ -51,13 +51,13 @@ namespace Close_the_gap.Controllers
                         // 2. Use the AsDataSet extension method
                         var result = reader.AsDataSet();
                         var iRow = 0;
-                        var donnor = "";
+                        var donor = "";
                         var date = new DateTime();
                         while (reader.Read())
                         {
                             if(iRow == 0)
                             {
-                                donnor = reader.GetValue(5).ToString();
+                                donor = reader.GetValue(5).ToString();
                             }
                             if(iRow == 1)
                             {
@@ -78,7 +78,7 @@ namespace Close_the_gap.Controllers
                                 //Type = GetStringValue(reader, CTGCircularColumn.Type),
                                 SerialNumber = GetStringValue(reader, CTGCircularColumn.SerialNumber),
                                 Grade = GetStringValue(reader, CTGCircularColumn.CustomGrade),
-                                Donnor = donnor,
+                                Donor = donor,
                                 CollectionDate = date,
                             };
                            
@@ -134,9 +134,9 @@ namespace Close_the_gap.Controllers
 
                                 }
                             }
-                            material.ReconditionnerData = new Dictionary<string, string>();
-                            material.ReconditionnerData.Add("load number", GetStringValue(reader, CTGCircularColumn.ReconditionnerLoadNumber));
-                            material.ReconditionnerData.Add("tracking reference", GetStringValue(reader, CTGCircularColumn.ReconditionnerTrackingReference));
+                            material.ReconditionerData = new Dictionary<string, string>();
+                            material.ReconditionerData.Add("load number", GetStringValue(reader, CTGCircularColumn.ReconditionnerLoadNumber));
+                            material.ReconditionerData.Add("tracking reference", GetStringValue(reader, CTGCircularColumn.ReconditionnerTrackingReference));
                             materialList.Add(material);
                             iRow++;
                         };
