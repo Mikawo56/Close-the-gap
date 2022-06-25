@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Close_the_gap.Controllers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -17,7 +18,7 @@ namespace Close_the_gap.Model
         [JsonProperty(PropertyName = "assetTag")]
         public string AssetTag { get; set; }
         [JsonProperty(PropertyName = "type")]
-        public string Type { get; set; }
+        public MaterialType Type { get; set; }
         [JsonProperty(PropertyName = "brand")]
         public string Brand { get; set; }
         [JsonProperty(PropertyName = "components")]
@@ -30,5 +31,7 @@ namespace Close_the_gap.Model
         public string Donnor { get; set; }
         [JsonProperty(PropertyName = "collectionDate")]
         public DateTime CollectionDate  { get; set; }
+
+
     }
 }
