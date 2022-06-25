@@ -192,13 +192,13 @@ namespace Close_the_gap.Controllers
                     {
                         var result = reader.AsDataSet();
                         var iRow = 0;
-                        var donnor = "";
+                        var donnorTES = "";
                         var date = new DateTime();
                         while (reader.Read())
                         {
                             if (iRow == 2)
                             {
-                                donnor = reader.GetValue(1).ToString();
+                                donnorTES = reader.GetValue(1).ToString();
                             }
                             if (iRow == 9)
                             {
@@ -216,11 +216,11 @@ namespace Close_the_gap.Controllers
                                 AssetTag = GetStringValueTES(reader, TESCircularColumn.AssetTag),
                                 Brand = GetStringValueTES(reader, TESCircularColumn.Manufacturer),
                                 Model = GetStringValueTES(reader, TESCircularColumn.Model),
-                                Type = (MaterialType)MaterialTypeMethods.GetMaterialEnum(GetStringValueTES(reader, TESCircularColumn.StockType)),
+                                //Type = (MaterialType)MaterialTypeMethods.GetMaterialEnum(GetStringValueTES(reader, TESCircularColumn.StockType)),
                                 //Type = GetStringValueTES(reader, TESCircularColumn.StockType).,
                                 SerialNumber = GetStringValueTES(reader, TESCircularColumn.SerialNumber),
                                 Grade = GetStringValueTES(reader, TESCircularColumn.ConditionCode),
-                                Donnor = donnor,
+                                Donor = donnorTES,
                                 CollectionDate = date,
                             };
 
@@ -282,8 +282,8 @@ namespace Close_the_gap.Controllers
                                 }
 
                             }
-                            material.ReconditionnerData = new Dictionary<string, string>();
-                            material.ReconditionnerData.Add("book number", GetStringValueTES(reader, TESCircularColumn.ReconditionnerBookNumber));          
+                            material.ReconditionerData = new Dictionary<string, string>();
+                            material.ReconditionerData.Add("book number", GetStringValueTES(reader, TESCircularColumn.ReconditionnerBookNumber));          
                             materialList.Add(material);
                             iRow++;
                         };
