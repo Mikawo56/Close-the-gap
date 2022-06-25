@@ -51,6 +51,17 @@ namespace Close_the_gap
                 configuration.RootPath = "ClientApp/build";
             });
             services.AddSwaggerGen();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    policy =>
+                    {
+                        policy
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +83,8 @@ namespace Close_the_gap
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+            
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
