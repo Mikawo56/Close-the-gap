@@ -24,10 +24,10 @@ namespace Close_the_gap.Model
         public Dictionary<string,string> Components { get; set; }
         [JsonProperty(PropertyName = "defects")]
         public List<string> Defects { get; set; }
-        [JsonProperty(PropertyName = "reconditionnerData")]
-        public Dictionary<string, string> ReconditionnerData { get; set; }
-        [JsonProperty(PropertyName = "donnor")]
-        public string Donnor { get; set; }
+        [JsonProperty(PropertyName = "reconditionerData")]
+        public Dictionary<string, string> ReconditionerData { get; set; }
+        [JsonProperty(PropertyName = "donor")]
+        public string Donor { get; set; }
         [JsonProperty(PropertyName = "collectionDate")]
         public DateTime CollectionDate  { get; set; }
     }

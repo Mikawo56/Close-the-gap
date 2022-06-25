@@ -69,9 +69,9 @@ namespace Close_the_gap.Services
 
         }
 
-        public async Task<List<Material>> GetMaterialListAsync(string queryString)
+        public async Task<List<Material>> GetMaterialListAsync()
         {
-            var query = _container.GetItemQueryIterator<Material>(new QueryDefinition(queryString));
+            var query = _container.GetItemQueryIterator<Material>(new QueryDefinition("SELECT * FROM c"));
             List<Material> results = new List<Material>();
             while (query.HasMoreResults)
             {
@@ -80,6 +80,22 @@ namespace Close_the_gap.Services
                 results.AddRange(response.ToList());
             }
 
+            return results;
+        }
+        
+        public async Task<List<Material>> GetMaterialListPerDonorDateAsync(string donor, DateTime collectionDate)
+        {
+            var queryDefinition =
+                new QueryDefinition("SELECT * FROM c WHERE c.donor = @donor AND c.collectionDate = @collectionDate")
+                    .WithParameter("@donor", donor)
+                    .WithParameter("@collectionDate", collectionDate);
+            var query = _container.GetItemQueryIterator<Material>(queryDefinition);
+            List<Material> results = new List<Material>();
+            while (query.HasMoreResults)
+            {
+                var response = await query.ReadNextAsync();
+                results.AddRange(response.ToList());
+            }
             return results;
         }
 
