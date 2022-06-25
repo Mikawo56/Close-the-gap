@@ -9,7 +9,7 @@ namespace Close_the_gap.Services
     {
         Task<List<Material>> GetMaterialListAsync();
         Task<Material> GetMaterialAsync(string id);
-        Task<List<Material>> GetMaterialListPerDonorDateAsync(string donor, DateTime collectionDate);
+        Task<List<Material>> GetMaterialListPerDonorDateAsync(string donor, string collectionDate);
         Task AddMaterialAsync(Material item);
         Task AddBulkMaterialListAsync(List<Material> materials);
         Task UpdateMaterialAsync(string id, Material item);

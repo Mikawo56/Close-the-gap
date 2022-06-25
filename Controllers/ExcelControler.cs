@@ -79,7 +79,7 @@ namespace Close_the_gap.Controllers
                                 SerialNumber = GetStringValue(reader, CTGCircularColumn.SerialNumber),
                                 Grade = GetStringValue(reader, CTGCircularColumn.CustomGrade),
                                 Donor = donor,
-                                CollectionDate = date,
+                                CollectionDate = date.ToString("dd/MM/yyyy"),
                             };
                            
                             material.Defects = new List<string>();
@@ -149,7 +149,7 @@ namespace Close_the_gap.Controllers
             }
 
             await _cosmosDbService.AddBulkMaterialListAsync(materialList);
-            return Ok(materialList);
+            return Ok();
         }
 
         private string GetStringValueTES(IExcelDataReader reader, TESCircularColumn column)

@@ -30,8 +30,6 @@ namespace Close_the_gap.Model
         [JsonProperty(PropertyName = "donor")]
         public string Donor { get; set; }
         [JsonProperty(PropertyName = "collectionDate")]
-        public DateTime CollectionDate  { get; set; }
-
-
+        public string CollectionDate  { get; set; }
     }
 }
