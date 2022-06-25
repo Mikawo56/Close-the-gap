@@ -21,7 +21,7 @@ public class MaterialController : ControllerBase
     public async Task<ActionResult> GetMaterialList()
     {
         var result =await  _cosmosDbService.GetMaterialListAsync();
-        return Ok();
+        return Ok(result);
     }
 
     [HttpGet]
