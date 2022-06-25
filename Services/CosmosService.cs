@@ -83,7 +83,7 @@ namespace Close_the_gap.Services
             return results;
         }
         
-        public async Task<List<Material>> GetMaterialListPerDonorDateAsync(string donor, DateTime collectionDate)
+        public async Task<List<Material>> GetMaterialListPerDonorDateAsync(string donor, string collectionDate)
         {
             var queryDefinition =
                 new QueryDefinition("SELECT * FROM c WHERE c.donor = @donor AND c.collectionDate = @collectionDate")

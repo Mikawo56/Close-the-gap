@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 
 const Home = () => (
   <div>
-    <h1>Hello, world!</h1>
-    <button>Import Excel</button>
+    <h1>Close the gap</h1>
   </div>
 );
 
