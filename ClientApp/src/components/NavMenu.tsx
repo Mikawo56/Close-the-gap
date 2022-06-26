@@ -24,7 +24,7 @@ export default class NavMenu extends React.PureComponent<
     return (
       <header>
         <Navbar
-          className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3"
+          className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow"
           light
         >
           <Container>
@@ -44,26 +44,26 @@ export default class NavMenu extends React.PureComponent<
               navbar
             >
               <ul className="navbar-nav flex-grow">
-                <NavItem>
+                {/* <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/">
                     Home
                   </NavLink>
-                </NavItem>
-                <NavItem>
+                </NavItem> */}
+                {/* <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/import">
                     Import
                   </NavLink>
-                </NavItem>
-                <NavItem>
+                </NavItem> */}
+                {/* <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/inventory">
                     Inventory
                   </NavLink>
-                </NavItem>
-                <NavItem>
+                </NavItem> */}
+                {/* <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/report">
                     Report
                   </NavLink>
-                </NavItem>
+                </NavItem> */}
               </ul>
             </Collapse>
           </Container>
